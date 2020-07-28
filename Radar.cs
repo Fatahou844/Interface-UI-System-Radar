@@ -212,10 +212,15 @@ namespace Interface_RADAR
            //g.DrawLine(p, new Point((int)(_size / 2), 0), new Point((int)(_size / 2), _size - 1));
             g.DrawLine(p, new Point((int)(_size / 2), 0), new Point((int)(_size / 2), _size /2));
             //g.DrawLine(p, new Point((int)(_size / 2), (int)(_size / 2)), new Point((int)(_size / 2+_size/2*Math.Cos(45)), (int)(_size / 2 - _size / 2 * Math.Cos(45))));
-            //int a = _size - 1 - ((int)(_size / 2-_size/2*Math.Cos(45.0)));
-            //int b = (int)(_size / 2 - _size / 2 * Math.Cos(45.0));
+           // int a = _size - ((int)(_size / 2 - _size / 2 * Math.Cos(45.0)));
+           // int b = (int)(_size / 2 - _size / 2 * Math.Cos(45.0)); 
+          
+
             g.DrawLine(p, new Point((int)(_size / 2), (int)(_size / 2)), new Point(_size-1, 0));
             g.DrawLine(p, new Point((int)(_size / 2), (int)(_size / 2)), new Point(0, 0));
+            //g.DrawLine(p, new Point((int)(_size / 2), (int)(_size / 2)), new Point(a, b));
+           
+
 
 
             // release the graphics object
