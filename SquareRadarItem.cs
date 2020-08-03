@@ -94,10 +94,32 @@ namespace Interface_RADAR
 
         public void DrawItem(Radar radar, Graphics g)
         {
+            Font drawFont = new Font("Arial", 8);
+            Font drawFont_risk = new Font("Wide Latin", 14);
+            SolidBrush drawBrush = new SolidBrush(Color.Lime);
+            SolidBrush drawBrush_risk = new SolidBrush(Color.Red);
             PointF cp = radar.AzRg2XY(_azimuth, _range);
             PointF topLeft = new PointF(cp.X - ((float)_width / 2), cp.Y - ((float)_height / 2));
+            PointF Pf = new PointF(cp.X , cp.Y);
 
             g.FillRectangle(new SolidBrush(radar.CustomLineColor), new RectangleF(topLeft, new SizeF((float)_width, (float)_height)));
+            g.DrawString("V=10 m/s", drawFont, drawBrush, cp);
+
+            // Zone à risque
+            if ((decimal)(_range) <= 5)
+            {
+                g.DrawString("!", drawFont_risk, drawBrush_risk, topLeft);
+            }
+            // Zone tolérable
+            else if ((decimal)(_range) <= 15)
+            {
+                g.DrawString("└", drawFont_risk, drawBrush_risk, topLeft);
+            }
+
+
+
+
+
         }
 
         public int CompareTo(RadarItem item)

@@ -24,6 +24,7 @@ namespace Interface_RADAR
         Image _outputImage;
         // the azimuth of the radar
         int _az = 0;
+        int _rg = 0;
         // some internally used points for drawing the fade
         // of the radar scanline
         PointF _pt = new PointF(0F, 0F);
@@ -186,8 +187,8 @@ namespace Interface_RADAR
             // draw the outer ring (0° elevation)
             //g.DrawEllipse(p, 0, 0, _size - 1, _size - 1);
             g.DrawArc(p, 0, 0, _size - 1, _size - 1, 0, -180);
-            Font drawFont = new Font("Arial", 12);
-            SolidBrush drawBrush = new SolidBrush(Color.Lime);
+            Font drawFont = new Font("Gill Sans MT Condensed", 10);
+            SolidBrush drawBrush = new SolidBrush(Color.AntiqueWhite);
             
             g.DrawString("20 m", drawFont, drawBrush, new Point((int)(_size / 2), 0));
             
@@ -206,19 +207,28 @@ namespace Interface_RADAR
             //g.DrawEllipse(p_red, (_size - interval) / 2, (_size - interval) / 2, interval, interval);
             g.DrawArc(p_red, (_size - interval) / 2, (_size - interval) / 2, interval, interval, 0, -180);
             g.DrawString("5 m", drawFont, drawBrush, new Point((int)((_size) / 2), (_size - interval) / 2));
-          
+            int a = _size - ((int)(_size / 2 - _size / 2 * Math.Cos(45.0)));
+            int b = (int)(_size / 2 - _size / 2 * Math.Cos(45.0));
+            int c = (int)(1 * _size / 4 * Math.Cos(45.0));
+            int d = (int)((_size-1-_size/7));
+
+            // Ecrire les valeurs des angles 45 et -45 
+
+            g.DrawString("45°", drawFont, drawBrush, new Point(d-_size/35, c));
+
+            g.DrawString("-45°", drawFont, drawBrush, new Point(c, c));
+
             // draw the x and y axis lines
             g.DrawLine(p, new Point(0, (int)(_size / 2)), new Point(_size - 1, (int)(_size / 2)));
            //g.DrawLine(p, new Point((int)(_size / 2), 0), new Point((int)(_size / 2), _size - 1));
             g.DrawLine(p, new Point((int)(_size / 2), 0), new Point((int)(_size / 2), _size /2));
             //g.DrawLine(p, new Point((int)(_size / 2), (int)(_size / 2)), new Point((int)(_size / 2+_size/2*Math.Cos(45)), (int)(_size / 2 - _size / 2 * Math.Cos(45))));
-           // int a = _size - ((int)(_size / 2 - _size / 2 * Math.Cos(45.0)));
-           // int b = (int)(_size / 2 - _size / 2 * Math.Cos(45.0)); 
+            
           
 
-            g.DrawLine(p, new Point((int)(_size / 2), (int)(_size / 2)), new Point(_size-1, 0));
-            g.DrawLine(p, new Point((int)(_size / 2), (int)(_size / 2)), new Point(0, 0));
-            //g.DrawLine(p, new Point((int)(_size / 2), (int)(_size / 2)), new Point(a, b));
+            //g.DrawLine(p, new Point((int)(_size / 2), (int)(_size / 2)), new Point(d, (int)(_size / 7)));
+            g.DrawLine(p, new Point((int)(_size / 2), (int)(_size / 2)), new Point((int)(_size / 7), (int)(_size / 7)));
+            g.DrawLine(p, new Point((int)(_size / 2), (int)(_size / 2)), new Point(d, (int)(_size / 7)));
            
 
 
@@ -317,15 +327,41 @@ namespace Interface_RADAR
             // turn into radians
             angle *= 0.0174532925d;
 
+            double r, x, y, x1, y1;
+
+            // determine the lngth of the radius
+            r = (double)_size * 0.5d;
+            r = (r * (double)range / 20);
+          
+
+            x = (((double)_size * 0.5d) + (r * Math.Cos(angle)));
+            y = (((double)_size * 0.5d) + (r * Math.Sin(angle)));
+
+      
+            return new PointF((float)x, (float)y);
+        }
+
+        public PointF AzRg2XY_Scan(int azimuth, int range)
+        {
+            // rotate coords... 90deg W = 180deg trig
+            double angle = (270d + (double)azimuth);
+
+            // turn into radians
+            angle *= 0.0174532925d;
+
             double r, x, y;
 
             // determine the lngth of the radius
             r = (double)_size * 0.5d;
-            //r -= (r * (double)range / 90);
-            r -= (r * (double)range / 20);
+            r -= (r * (double)range / 90);
+            // r = (r * (double)range / 20);
+    
 
             x = (((double)_size * 0.5d) + (r * Math.Cos(angle)));
             y = (((double)_size * 0.5d) + (r * Math.Sin(angle)));
+
+        
+
 
             return new PointF((float)x, (float)y);
         }
@@ -352,6 +388,8 @@ namespace Interface_RADAR
 
         void t_Tick(object sender, EventArgs e)
         {
+            
+            
             // increment the azimuth
             _az++;
 
@@ -361,9 +399,9 @@ namespace Interface_RADAR
                 _az = -60;
 
             // update the fade path coordinates
-            _pt = AzRg2XY(_az, 0);
-            _pt2 = AzRg2XY(_az - 20, 0);
-            _pt3 = AzRg2XY(_az - 10, -10);
+            _pt = AzRg2XY_Scan(_az, 0);
+            _pt2 = AzRg2XY_Scan(_az - 20, 0);
+            _pt3 = AzRg2XY_Scan(_az - 10, -10);
 
             // redraw the output image
             Draw();

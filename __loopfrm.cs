@@ -25,15 +25,20 @@ namespace Interface_RADAR
             flowLayoutPanel2.BackColor = Color.Transparent;
             flowLayoutPanel3.BackColor = Color.Transparent;
             flowLayoutPanel4.BackColor = Color.Transparent;
+            flowLayoutPanel5.BackColor = Color.Transparent;
+            flowLayoutPanel6.BackColor = Color.Transparent;
+            flowLayoutPanel7.BackColor = Color.Transparent;
+            flowLayoutPanel8.BackColor = Color.Transparent;
+            flowLayoutPanel9.BackColor = Color.Transparent;
             //pictureBox5.BackColor = Color.Transparent;
             label1.BackColor = Color.Transparent;
             t.Interval = 60;
             t.Tick += new EventHandler(t_Tick);
             t.Enabled = true;
         }
-        RadarItem item1 = new SquareRadarItem(1, 8, 70, 14);
-        RadarItem item2 = new CircleRadarItem(2, 8, -45, 5);
-        RadarItem item3 = new TriangleRadarItem(3, 8, 30, 12);
+        RadarItem item1 = new SquareRadarItem(1, 8, 45, 7);
+        RadarItem item2 = new CircleRadarItem(2, 8, -45, 15);
+        RadarItem item3 = new TriangleRadarItem(3, 8, 30, 19);
         
 
         public object pictureBox5 { get; }
@@ -190,6 +195,16 @@ namespace Interface_RADAR
         }
 
         private void flowLayoutPanel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
         {
 
         }
