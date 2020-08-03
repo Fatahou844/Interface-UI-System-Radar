@@ -25,7 +25,6 @@ namespace Interface_RADAR
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(@__loopfrm));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.iconClose = new System.Windows.Forms.PictureBox();
             this.iconDimin = new System.Windows.Forms.PictureBox();
             this.iconMaxim = new System.Windows.Forms.PictureBox();
@@ -37,7 +36,7 @@ namespace Interface_RADAR
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.iconClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconDimin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMaxim)).BeginInit();
@@ -47,16 +46,8 @@ namespace Interface_RADAR
             this.flowLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.flowLayoutPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(719, 400);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // iconClose
             // 
@@ -127,11 +118,11 @@ namespace Interface_RADAR
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Lato Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Lime;
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(192, 58);
+            this.label1.Size = new System.Drawing.Size(170, 120);
             this.label1.TabIndex = 1;
             this.label1.Text = "79 GHz RADAR  IHM";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -148,8 +139,8 @@ namespace Interface_RADAR
             // flowLayoutPanel3
             // 
             this.flowLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel3.Controls.Add(this.pictureBox1);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(326, 84);
+            this.flowLayoutPanel3.Controls.Add(this.pictureBox2);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(261, 81);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
             this.flowLayoutPanel3.Size = new System.Drawing.Size(722, 403);
             this.flowLayoutPanel3.TabIndex = 11;
@@ -160,7 +151,7 @@ namespace Interface_RADAR
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 15);
+            this.label2.Size = new System.Drawing.Size(53, 20);
             this.label2.TabIndex = 14;
             this.label2.Text = "label2";
             // 
@@ -185,9 +176,17 @@ namespace Interface_RADAR
             this.flowLayoutPanel4.TabIndex = 15;
             this.flowLayoutPanel4.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel4_Paint);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(719, 400);
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
             // __loopfrm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
@@ -197,13 +196,12 @@ namespace Interface_RADAR
             this.Controls.Add(this.flowLayoutPanel3);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Font = new System.Drawing.Font("Franklin Gothic Demi", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "__loopfrm";
             this.Text = "Interface";
             this.Load += new System.EventHandler(this.@__loopfrm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconDimin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconMaxim)).EndInit();
@@ -214,6 +212,7 @@ namespace Interface_RADAR
             this.flowLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.flowLayoutPanel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,7 +226,6 @@ namespace Interface_RADAR
         
 
         #endregion
-        private System.Windows.Forms.PictureBox pictureBox1;
         private PictureBox iconClose;
         private PictureBox iconDimin;
         private PictureBox iconMaxim;
@@ -239,6 +237,7 @@ namespace Interface_RADAR
         private Label label2;
         private PictureBox pictureBox4;
         private FlowLayoutPanel flowLayoutPanel4;
+        private PictureBox pictureBox2;
     }
 }
 

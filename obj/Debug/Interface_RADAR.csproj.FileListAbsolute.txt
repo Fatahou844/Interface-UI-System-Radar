@@ -8,3 +8,13 @@ C:\Users\admin\Desktop\Interface-UI-System-Radar\obj\Debug\Interface_RADAR.Prope
 C:\Users\admin\Desktop\Interface-UI-System-Radar\obj\Debug\Interface_RADAR.csproj.CoreCompileInputs.cache
 C:\Users\admin\Desktop\Interface-UI-System-Radar\obj\Debug\Interface_RADAR.exe
 C:\Users\admin\Desktop\Interface-UI-System-Radar\obj\Debug\Interface_RADAR.pdb
+C:\Users\dell\Desktop\Fatah\FATAH\Interface-UI-System-Radar\bin\Debug\Interface_RADAR.exe.config
+C:\Users\dell\Desktop\Fatah\FATAH\Interface-UI-System-Radar\bin\Debug\Interface_RADAR.exe
+C:\Users\dell\Desktop\Fatah\FATAH\Interface-UI-System-Radar\bin\Debug\Interface_RADAR.pdb
+C:\Users\dell\Desktop\Fatah\FATAH\Interface-UI-System-Radar\obj\Debug\Interface_RADAR.csprojAssemblyReference.cache
+C:\Users\dell\Desktop\Fatah\FATAH\Interface-UI-System-Radar\obj\Debug\Interface_RADAR.__loopfrm.resources
+C:\Users\dell\Desktop\Fatah\FATAH\Interface-UI-System-Radar\obj\Debug\Interface_RADAR.Properties.Resources.resources
+C:\Users\dell\Desktop\Fatah\FATAH\Interface-UI-System-Radar\obj\Debug\Interface_RADAR.csproj.GenerateResource.cache
+C:\Users\dell\Desktop\Fatah\FATAH\Interface-UI-System-Radar\obj\Debug\Interface_RADAR.csproj.CoreCompileInputs.cache
+C:\Users\dell\Desktop\Fatah\FATAH\Interface-UI-System-Radar\obj\Debug\Interface_RADAR.exe
+C:\Users\dell\Desktop\Fatah\FATAH\Interface-UI-System-Radar\obj\Debug\Interface_RADAR.pdb
